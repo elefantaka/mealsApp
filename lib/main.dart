@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:meals_app/categories_screen.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Meals app',
-      home: MyHomePage(title: 'Meals app 2'),
+      title: 'DeliMeals',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: CategoriesScreen(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
