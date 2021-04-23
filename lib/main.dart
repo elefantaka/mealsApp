@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'file:///C:/Work/flutterUdemy/meals_app/lib/screens/categories_screen.dart';
 import 'file:///C:/Work/flutterUdemy/meals_app/lib/screens/category_meals_screen.dart';
+import 'package:meals_app/screens/meal_detail_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,15 +22,27 @@ class MyApp extends StatelessWidget {
               body2: TextStyle(
                 color: Color.fromRGBO(153, 50, 204, 1),
               ),
-              title: TextStyle(fontSize: 20, fontFamily: 'RobotoCondensed', fontWeight: FontWeight.bold,),
+              title: TextStyle(
+                fontSize: 20,
+                fontFamily: 'RobotoCondensed',
+                fontWeight: FontWeight.bold,
+              ),
             ),
       ),
       // home: CategoriesScreen(),
       initialRoute: '/',
       routes: {
         '/': (ctx) => CategoriesScreen(),
-        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen()
+        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
       },
+      // onGenerateRoute: (settings) {
+      //   print(settings.arguments);
+      //   //return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+      // },
+      // onUnknownRoute: (setting){
+      //   return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
+      // },
     );
   }
 }
@@ -40,7 +53,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
